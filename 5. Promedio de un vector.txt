@@ -1,0 +1,74 @@
+//5.Calcular el promedio de los elementos de un vector desde una posicion inicial hasta una posicion final
+
+
+#include "stdafx.h"
+#include <iostream>
+#define N 50
+using namespace std;
+void cargarVec(int V[N], int n)
+{ 
+	for(int i=0;i<n;i++)
+	{
+	  cout<<"Vec"<<"["<<i<<"]=";
+	  cin>>V[i];
+	}
+}
+void mostrarVec(int V[N],int n)
+{
+	for(int i=0;i<n;i++)
+	{
+		cout<<V[i]<<" ";
+	}
+}
+float sumaPosicion(int V[], int posF, int posI)
+{
+	if(posF<posI)
+		return 0; 
+	else return (sumaPosicion(V, posF-1, posI) + V[posF]);
+
+}	
+
+float promedioVectorPos(int V[],int posF,int posI)
+{  float divisor;
+   float promedio;
+
+	divisor=(posF-posI)+1;
+    promedio=(sumaPosicion(V,posF,posI))/divisor;
+     
+	return promedio;
+	
+}
+
+
+	void main()
+{
+	int V[N];
+	int n;
+	int posI, posF;
+	do{
+	cout<<"Indicar cuantos elementos tendra el vector"<<endl;
+	cin>>n;
+	if(n<=0)
+	{
+	cout<<"Cantidad de elementos invalido"<<endl;
+	}
+	}while(n<=0);
+	cargarVec(V,n);
+	mostrarVec(V,n);
+	cout<<endl;
+	do{
+	cout<<"Ingrese la posicion inicial"<<endl;
+	cin>>posI;
+	}while(posI<0);
+	do{
+	cout<<"Ingrese la posicion final"<<endl;
+	cin>>posF;
+	}while(posF<=posI);
+	cout<<"La suma de las posiciones es"<<endl;
+	cout<<sumaPosicion(V,posF,posI)<<endl;
+	cout<<"El promedio es"<<endl;
+	cout<<promedioVectorPos(V,posF,posI);
+	
+	 
+	system("pause>null");
+}

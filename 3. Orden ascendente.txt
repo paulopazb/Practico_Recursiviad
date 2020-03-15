@@ -1,0 +1,56 @@
+//3. Verificar que los elementos de un vector estan ordenados ascendentemente
+
+#include "stdafx.h"
+#include <iostream>
+#define N 50
+using namespace std;
+void cargarVec(int V[N], int n)
+{ 
+	for(int i=0;i<n;i++)
+	{
+	  cout<<"Vec"<<"["<<i<<"]=";
+	  cin>>V[i];
+	}
+}
+void mostrarVec(int V[N],int n)
+{
+	for(int i=0;i<n;i++)
+	{
+		cout<<V[i]<<" ";
+	}
+}
+
+ bool verificarAscendente(int V[],int n)
+  {
+	if(n==0)
+		return true;
+	else{
+		  if(V[n-1]<V[n-2])
+		  {
+			return false;
+		  }
+		  else return verificarAscendente(V,n-1);		
+	    }
+ }
+
+   void main()
+{
+	int V[N];
+	int n;
+	do{
+	cout<<"Indicar cuantos elementos tendra el vector"<<endl;
+	cin>>n;
+	if(n<=0)
+	{
+	cout<<"Cantidad de elementos invalido"<<endl;
+	}
+	}while(n<=0);
+	cargarVec(V,n);
+	mostrarVec(V,n);
+	cout<<endl;
+	if(verificarAscendente(V,n)==true)
+	   cout<<"Esta ordenando"<<endl;
+	 else cout<<"No esta ordenado"<<endl;
+	
+	system("pause>null");
+}
