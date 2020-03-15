@@ -5,50 +5,49 @@
 using namespace std;
 void cargarVec(int V[N], int n)
 { 
-	for(int i=0;i<n;i++)
-	{
-	  cout<<"Vec"<<"["<<i<<"]=";
-	  cin>>V[i];
-	}
+   for(int i=0;i<n;i++)
+   {
+     cout<<"Vec"<<"["<<i<<"]=";
+     cin>>V[i];
+   }
 }
 void mostrarVec(int V[N],int n)
 {
-	for(int i=0;i<n;i++)
-	{
-		cout<<V[i]<<" ";
-	}
+  for(int i=0;i<n;i++)
+  {
+   cout<<V[i]<<" ";
+  }
 }
 bool verificarPrimo(int n, int divisor)
-{	if(n==1)
-		return false;
-	if(n/2 < divisor){
-			return true;
-		} else {
-			if(n%divisor==0){
-				return false;
-			} else {
-				return verificarPrimo(n, divisor+1);
-			}
-		}
+{  if(n==1)
+    return false;
+   if(n/2 < divisor){
+     return true;
+    } else {
+	    if(n%divisor==0){
+	       return false;
+	     } else {
+		     return verificarPrimo(n, divisor+1);
+	            }
+	    }
 }
 int sumarPrimos(int V[], int n)
 {  
-	if(n<=0)
-	{
-    	return 0;
-	}
-	if(n==1)
-	{
-		if(verificarPrimo(V[0],2)==true)
-			return V[0];
-		else return 0;
+   if(n<=0)
+      return 0;
+   if(n==1)
+   {
+     if(verificarPrimo(V[0],2)==true)
+	 return V[0];
+      else return 0;
 	}else{ 
-		int sp=sumarPrimos(V,n-1);
-		if(verificarPrimo(V[n-1],2)==true)
-		{
-			return sp+V[n-1];
-		}
-		else{return sp;}
+	       int sp=sumarPrimos(V,n-1);
+	       if(verificarPrimo(V[n-1],2)==true)
+	       {
+		 return sp+V[n-1];
+	       }else{
+		     return sp;
+		     }
 	}
 }
 	void main()
@@ -67,5 +66,6 @@ int sumarPrimos(int V[], int n)
 	mostrarVec(V,n);
 	cout<<endl;
 	cout<<sumarPrimos(V,n)<<endl;
+	
 	system("pause>null");
 }
