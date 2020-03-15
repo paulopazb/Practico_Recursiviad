@@ -5,21 +5,21 @@ using namespace std;
 
 int mayor(int n)
 {
-	if(n==0)
-		return 0;
-	else {
-		int digMayor=abs(n)%10;
-		if(digMayor<mayor(abs(n)/10))
-			return mayor(abs(n)/10);
-		else return digMayor;
-	
+   if(n==0)
+     return 0;
+   else {
+           int digMayor=abs(n)%10;
+	   if(digMayor<mayor(abs(n)/10))
+	      return mayor(abs(n)/10);
+	     else return digMayor;
 	}
 }
-	int main()
+    void main()
 {
-	 int n;
-     cout<<"Ingrese el numero"<<endl;
-	 cin>>n;
-	 cout<<"El digito mayor es:"<<mayor(n)<<endl;
-	 system("pause>null");
+    int n;
+    cout<<"Ingrese el numero"<<endl;
+    cin>>n;
+    cout<<"El digito mayor es:"<<mayor(n)<<endl;
+    
+    system("pause>null");
 }
