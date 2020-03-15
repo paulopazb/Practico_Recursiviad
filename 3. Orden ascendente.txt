@@ -22,14 +22,14 @@ void mostrarVec(int V[N],int n)
 
  bool verificarAscendente(int V[],int n)
   {
-	if(n==0)
-		return true;
+  	if(n==0)
+	  return true;
 	else{
-		  if(V[n-1]<V[n-2])
-		  {
-			return false;
-		  }
-		  else return verificarAscendente(V,n-1);		
+	      if(V[n-1]<V[n-2])
+	      { 
+	        return false;
+	      }
+	      else return verificarAscendente(V,n-1);		
 	    }
  }
 
@@ -50,7 +50,7 @@ void mostrarVec(int V[N],int n)
 	cout<<endl;
 	if(verificarAscendente(V,n)==true)
 	   cout<<"Esta ordenando"<<endl;
-	 else cout<<"No esta ordenado"<<endl;
+	else cout<<"No esta ordenado"<<endl;
 	
 	system("pause>null");
 }
