@@ -7,38 +7,36 @@
 using namespace std;
 void cargarVec(int V[N], int n)
 { 
-	for(int i=0;i<n;i++)
-	{
-	  cout<<"Vec"<<"["<<i<<"]=";
-	  cin>>V[i];
-	}
+   for(int i=0;i<n;i++)  
+   {
+     cout<<"Vec"<<"["<<i<<"]=";
+     cin>>V[i];
+   }
 }
 void mostrarVec(int V[N],int n)
 {
-	for(int i=0;i<n;i++)
-	{
-		cout<<V[i]<<" ";
-	}
+   for(int i=0;i<n;i++)
+   {
+     cout<<V[i]<<" ";
+   }
 }
 float sumaPosicion(int V[], int posF, int posI)
 {
-	if(posF<posI)
-		return 0; 
-	else return (sumaPosicion(V, posF-1, posI) + V[posF]);
-
+   if(posF<posI)
+      return 0; 
+   else return (sumaPosicion(V, posF-1, posI) + V[posF]);
 }	
 
 float promedioVectorPos(int V[],int posF,int posI)
-{  float divisor;
+{  
+   float divisor;
    float promedio;
-
-	divisor=(posF-posI)+1;
+     
+    divisor=(posF-posI)+1;
     promedio=(sumaPosicion(V,posF,posI))/divisor;
      
 	return promedio;
-	
 }
-
 
 	void main()
 {
