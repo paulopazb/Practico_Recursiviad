@@ -1,0 +1,46 @@
+//2. Mostrar la suma de los n primeros términos de la serie: S= 1!/1^2 + 2!/2^2 + 3!/3^2 + 4!/4^2… 
+
+#include "stdafx.h"
+#include <iostream>
+
+using namespace std;
+
+float factorial(int n)
+{
+   if(n==0)
+      return 1;
+   if(n==1)
+      return 1;
+   else return factorial(n-1)*n;
+}
+
+int potencia(int n, int e) 
+{
+   if(e==0)
+    return 1;
+   else{
+          int p= potencia(n,e-1);
+          return n*p;
+      }
+}
+
+float sumatoria(int cantidad,int e)
+{
+    if(cantidad==1)
+      return 1;
+    else return (factorial(cantidad)/potencia(cantidad,e))+sumatoria(cantidad-1,e);
+}
+
+ void main()
+{
+      int n;
+      int e;
+      cout<<"Ingrese el numero de elementos que tendra la serie:"<<endl;
+      cin>>n;
+      cout<<"Ingrese el exponente de la base del denominador"<<endl;
+      cin>>e;
+      cout<<"La sumatoria de los "<<n<<" primeros terminos es: "<<sumatoria(n,e);
+		
+
+     system("pause>null");
+}
