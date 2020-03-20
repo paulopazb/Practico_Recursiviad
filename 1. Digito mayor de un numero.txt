@@ -9,8 +9,8 @@ int mayor(int n)
      return 0;
    else {
            int digMayor=abs(n)%10;
-	   if(digMayor<mayor(abs(n)/10))
-	      return mayor(abs(n)/10);
+	   if(digMayor<mayor(n/10))
+	      return mayor(n/10);
 	     else return digMayor;
 	}
 }
