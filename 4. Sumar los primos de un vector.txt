@@ -21,7 +21,7 @@ void mostrarVec(int V[N],int n)
 bool verificarPrimo(int n, int divisor)
 {  if(n==1)
     return false;
-   if(n/2 < divisor){
+   if(n/divisor < divisor){ // Si el cociente es menor que el divisor entonces es primo
      return true;
     } else {
 	    if(n%divisor==0){
