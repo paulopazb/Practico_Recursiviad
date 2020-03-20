@@ -34,7 +34,7 @@ void mostrarVec(int V[N],int n)
 	 }
  }
 
-   void main()
+    void main()
 {
 	int V[N];
 	int n;
