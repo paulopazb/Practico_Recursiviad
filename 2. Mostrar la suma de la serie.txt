@@ -26,8 +26,8 @@ int potencia(int n, int e)
 
 float sumatoria(int cantidad,int e)
 {
-    if(cantidad==1)
-      return 1;
+    if(cantidad==0)
+      return 0;
     else return (factorial(cantidad)/potencia(cantidad,e))+sumatoria(cantidad-1,e);
 }
 
