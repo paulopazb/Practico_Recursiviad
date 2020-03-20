@@ -38,7 +38,7 @@ float promedioVectorPos(int V[],int posF,int posI)
 	return promedio;
 }
 
-	void main()
+      void main()
 {
 	int V[N];
 	int n;
